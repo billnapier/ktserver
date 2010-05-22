@@ -168,7 +168,7 @@ def main():
     reactor.listenTCP(config.getint("server", "port"), site)
 
     # Start up the SSDP part
-    reactor.listenMulticast(UPNP_MULTICAST_PORT, udp)
+    reactor.listenMulticast(UPNP_MULTICAST_PORT, udp, listenMultiple=True)
     reactor.run()
 
 if __name__ == '__main__':
